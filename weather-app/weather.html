@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div class="main">
+        <div class="search">
+            <input type="text" name="" id="input-box" class="input-box" placeholder="Enter City name..."
+                autocomplete="off">
+        </div>
+        <div class="desc">
+            <div class="location" id="dt">
+                <div class="city" id="city">Ludhiana, IN</div>
+                <div class="date" id="date">May 05, 2024</div>
+            </div>
+            <div class="weather">
+                <div class="temp" id="temp">34&deg;C</div>
+                <div class="max-min" id="max-min">32&deg;C (min) / 34&deg;C (max)</div>
+                <div class="status" id="status">Clear</div>
+                <video autoplay muted loop id="weather-video">
+                    <source src=" " type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+    <script src="weather.js"></script>
+</body>
+
+</html>
