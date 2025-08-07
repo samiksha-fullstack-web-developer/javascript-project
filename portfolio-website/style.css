@@ -1,0 +1,512 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  background-color: #00071d;
+}
+
+.container {
+  font-family: "Lato", sans-serif;
+  max-width: 1240px;
+  margin: 20px auto;
+  padding: 0 10px;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.274);
+
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+
+/* about */
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 180px;
+  font-size: 17px;
+  gap: 100px;
+
+}
+
+.about-left {
+  width: 700px;
+  color: rgb(206, 205, 205);
+
+}
+
+.animatedheading {
+  font-size: 48px;
+  font-weight: 800;
+  background-image: linear-gradient(10deg, #795eb9, #e5f888, #2487b8);
+  background-size: 200% auto;
+  /* required for animation */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s infinite linear;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+button {
+  background-image: linear-gradient(10deg, #795eb9, #2487b8);
+  padding: 20px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+
+}
+
+button:hover {
+  background-image: linear-gradient(10deg, #2487b8, #795eb9);
+  animation: bounceOut;
+  animation-duration: 5s;
+}
+
+.about-right {
+  width: 540px;
+  /* Adjust size as needed */
+  height: 450px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 0 20px #528dab;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  /* Optional: adds spacing inside the circle */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: center 60%;
+}
+
+/* skills part */
+#skills {
+  margin-top: 140px;
+  color: white;
+  font-size: 22px;
+}
+
+.skill-container {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+.skill-box {
+  height: 500px;
+  width: 450px;
+  padding: 30px;
+  margin-top: 75px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 1px 2px 3px #2A3439;
+
+}
+
+/* Border Animation Layer */
+.skill-box::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(280deg, #b564f4, #3682df, #d4ebf5, #fdf675);
+  background-size: 600% 600%;
+  animation: borderAnimation 5s infinite alternate-reverse;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+/* Optional inner content background layer */
+.skill-box::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border-radius: 18px;
+  z-index: -1;
+  background-color: #00071d;
+}
+
+/* Keyframes for the moving gradient */
+@keyframes borderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.skill-box:hover {
+  animation: fadeIn;
+  animation-duration: 5s;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 55px;
+}
+
+.skill-items {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.skill-items p {
+  font-size: 15px;
+  font-size: bold;
+  margin-top: 10px;
+
+}
+
+/* experience */
+#experience {
+  margin-top: 140px;
+  color: rgb(206, 205, 205);
+  font-size: 22px;
+}
+
+.experience {
+  margin-top: 60px;
+  width: 100%;
+  height: 430px;
+  border: 2px solid #528dab;
+  padding: 50px;
+  font-size: 17px;
+  border-radius: 20px;
+  line-height: 1.5;
+  box-shadow: 1px 2px 8px #2bb5f2;
+}
+
+.experience ul {
+  list-style-type: none;
+  padding: 0;
+  color: white;
+}
+
+.experience li {
+  padding-left: 70px;
+  margin-top: 10px;
+  color: rgb(206, 205, 205);
+  line-height: 1.5;
+  position: relative;
+}
+
+.experience li::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 35px;
+  background: linear-gradient(135deg, #2bb5f2, #9259f2);
+}
+
+.experience:hover {
+  animation: fadeIn;
+  animation-duration: 5s;
+}
+
+/*Projects*/
+#projects {
+  margin-top: 150px;
+  color: white;
+  font-size: 22px;
+  padding-bottom: 550px;
+}
+
+.projects {
+  font-size: 17px;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  row-gap: 70px;
+  width: 100%;
+  height: 350px;
+  margin-top: 60px;
+  line-height: 1.4;
+  flex-wrap: wrap;
+}
+
+.all {
+  width: 350px;
+  padding: 30px;
+  border: 1px solid #2bb5f2;
+  border-radius: 20px;
+  box-shadow: 1px 2px 8px black;
+
+}
+
+.all:hover {
+  animation: shakeY;
+  animation-duration: 5s;
+}
+
+/* education */
+#education {
+  margin-top: 80px;
+  font-size: 22px;
+  color: white;
+}
+
+.education {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  padding-top: 40px;
+  gap: 20px;
+}
+
+.education::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  right: 30px;
+  height: 4px;
+  background: white;
+  z-index: 1;
+}
+
+.event {
+  position: relative;
+  width: 250px;
+  min-width: 200px;
+  padding-top: 30px;
+  line-height: 1.4;
+  color: rgb(206, 205, 205);
+  z-index: 2;
+  font-size: 17px;
+}
+
+.event::before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00f7ff, #d946ef);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-125px);
+  z-index: 3;
+}
+
+
+
+/*footer*/
+#copyright {
+  margin-top: 90px;
+  color: white;
+  font-size: 17px;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.274);
+}
+
+.footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+
+}
+
+/* Mobile menu */
+@media (max-width: 1000px) {
+  .container {
+    margin: 20px auto;
+    padding: 0 30px;
+    height: 100vh;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #2a3439dc;
+    height: 100vh;
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    padding: 10px;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+    margin-top: 50px;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  #about {
+    flex-direction: column-reverse;
+    margin-top: 100px;
+    overflow: hidden;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about-left {
+    width: 100%;
+
+  }
+
+  .about-right {
+    width: 90%;
+    height: 400px;
+    max-width: 540px;
+    margin-top: 18px;
+  }
+
+  .skill-container {
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .experience {
+    height: auto;
+  }
+
+  #projects {
+    padding-bottom: 1380px;
+  }
+
+  #education {
+    margin-top: 1000px;
+  }
+
+  .education {
+    flex-direction: column;
+    border-top: none;
+    padding-left: 30px;
+  }
+
+  .education::before {
+    top: 45px;
+    left: 28px;
+    width: 4px;
+    height: 100%;
+    background: white;
+  }
+
+  .event {
+    min-width: auto;
+    padding-left: 30px;
+    padding-top: 0;
+    margin-bottom: 40px;
+    text-align: justify;
+    width: 100%;
+
+  }
+
+  .event::before {
+    top: 0px;
+    left: 0;
+    transform: translate(-50%, 0);
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social {
+    margin-top: 20px;
+  }
+
+
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+  #projects {
+    padding-bottom: 1000px;
+    /* NOT 1380px */
+  }
+
+  #education {
+    margin-top: 120px;
+    /* NOT 1000px */
+  }
+}
